@@ -1,0 +1,9 @@
+---
+- name: Check online servers
+  ansible.builtin.command:
+    cmd: uptime
+  changed_when: false
+
+- name: Check server version
+  ansible.builtin.debug:
+    msg: "{{ ansible_distribution }} {{ ansible_distribution_version }}"
